@@ -5,6 +5,10 @@ import ThemeSwitch from "@/components/ThemeSwitch";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { Input } from "@nextui-org/react";
 
+export const skilsStyle = {
+    skils: " text-lg text-orange-action px-4 ",
+};
+
 interface IFormInput {
     firstName: string;
     label: string;
@@ -29,8 +33,8 @@ export default function Home() {
     };
 
     return (
-        <main className="container mx-auto py-[50px] px-[75px] bg-dark-bg">
-            <header className="flex justify-between">
+        <main className="container mx-auto py-[50px]  bg-dark-bg">
+            <header className="flex justify-between px-[75px]">
                 <h2>Web & Wolf</h2>
                 <nav>
                     <ul className="flex gap-x-9 ">
@@ -50,7 +54,7 @@ export default function Home() {
                 </nav>
                 <ThemeSwitch />
             </header>
-            <section className="flex justify-between my-40">
+            <section className="flex justify-between my-40 px-[75px]">
                 <div className="mt-8">
                     <h1 className="text-slate-200 text-4xl font-bold">
                         Hi
@@ -60,13 +64,13 @@ export default function Home() {
                     </h1>
                     <Link
                         href="#"
-                        className="  inline-block w-[182px] h-[50px] bg-[#F98A43] rounded-lg mt-8 text-center leading-[50px] mr-8"
+                        className="  inline-block w-[182px] h-[50px] bg-orange-action rounded-lg mt-8 text-center leading-[50px] mr-8"
                     >
                         My Projcts
                     </Link>
                     <Link
                         href="#"
-                        className=" inline-block w-[182px] h-[50px] bg-[#7A29DC] rounded-lg mt-8 text-center leading-[50px]"
+                        className=" inline-block w-[182px] h-[50px] bg-purple-action rounded-lg mt-8 text-center leading-[50px]"
                     >
                         My Resume
                     </Link>
@@ -85,42 +89,64 @@ export default function Home() {
                     <p className="mx-9">Barry Lopez</p>
                 </div>
             </section>
-            <section>
-                <h3 className="">About me</h3>
-                <Image
-                    src="/creativio3.png"
-                    alt="creative image"
-                    width={391}
-                    height={391}
-                />
-                <p>
-                    Front-end developer with over two years of commercial
-                    experience. My main stack is React along with TypeScript and
-                    Next js. I enjoy expoloring the React ecosystem and learning
-                    new technologies
-                </p>
-                <div>
-                    <span>Html</span>
-                    <span>Css</span>
-                    <span>Scss</span>
-                    <span>JavaScript</span>
-                    <span>TypeScript</span>
-                    <span>React</span>
-                    <span>Next.js </span>
-                    <span>Redux</span>
-                    <span>Redux Toolkit</span>
-                    <span>TanStack Query</span>
-                    <span>Tailwind</span>
-                    <span>NextUI</span>
-                    <span>MaterialUI</span>
-                    <span>Styled Components</span>
-                    <span>React Hook Form</span>
-                    <span>GraphQl</span>
-                    <span>Apollo Client</span>
-                    <span>Git</span>
-                    <span>Figma</span>
-                    <span>Storybook</span>
-                    <span>DatoCms</span>
+
+            {/* About me section */}
+            <section className="bg-light-bg w-full h-[676px] font-['Qwigley'] relative">
+                <h3 className="text-3xl text-center pt-6">About me</h3>
+                <div className="flex justify-between items-center">
+                    <Image
+                        src="/creativio3.png"
+                        alt="creative image"
+                        width={391}
+                        height={391}
+                        className="ml-[75px]"
+                    />
+                    <Image
+                        src="/slice4.svg"
+                        alt="dsf"
+                        width={773}
+                        height={26}
+                        className="absolute top-0 right-0 z-0"
+                    />
+                </div>
+                <div className="w-[510px] h-[340px] absolute top-[160px] right-[100px]">
+                    <p className="text-2xl">
+                        Front-end developer with over two years of commercial
+                        experience. My main stack is React along with TypeScript
+                        and Next js. I enjoy expoloring the React ecosystem and
+                        learning new technologies
+                    </p>
+                </div>
+                <div className="w-full z-50 absolute">
+                    <span className={`text-3xl ${skilsStyle.skils}`}>Html</span>
+                    <span className={`${skilsStyle.skils}`}>Css</span>
+                    <span className={`${skilsStyle.skils}`}>Scss</span>
+                    <span className={`${skilsStyle.skils}`}>JavaScript</span>
+                    <span className={`${skilsStyle.skils}`}>TypeScript</span>
+                    <span className={`text-3xl ${skilsStyle.skils}`}>
+                        React
+                    </span>
+                    <span className={`${skilsStyle.skils}`}>Next.js </span>
+                    <span className={`${skilsStyle.skils}`}>Redux</span>
+                    <span className={`${skilsStyle.skils}`}>Redux Toolkit</span>
+                    <span className={`${skilsStyle.skils}`}>
+                        TanStack Query
+                    </span>
+                    <span className={`${skilsStyle.skils}`}>Tailwind</span>
+                    <span className={`${skilsStyle.skils}`}>NextUI</span>
+                    <span className={`${skilsStyle.skils}`}>MaterialUI</span>
+                    <span className={`${skilsStyle.skils}`}>
+                        Styled Components
+                    </span>
+                    <span className={`${skilsStyle.skils}`}>
+                        React Hook Form
+                    </span>
+                    <span className={`${skilsStyle.skils}`}>GraphQl</span>
+                    <span className={`${skilsStyle.skils}`}>Apollo Client</span>
+                    <span className={`${skilsStyle.skils}`}>Git</span>
+                    <span className={`${skilsStyle.skils}`}>Figma</span>
+                    <span className={`${skilsStyle.skils}`}>Storybook</span>
+                    <span className={`${skilsStyle.skils}`}>DatoCms</span>
                 </div>
             </section>
             <section>

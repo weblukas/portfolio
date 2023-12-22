@@ -12,9 +12,6 @@ export default function ThemeSwitch() {
             color="success"
             startContent={<SunIcon />}
             endContent={<MoonIcon />}
-            // classNames={{
-            //  wrapper: 'bg-purple-action',
-            // }}
         >
             
         </Switch>
