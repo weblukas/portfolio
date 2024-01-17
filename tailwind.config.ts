@@ -16,15 +16,17 @@ const config: Config = {
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
             },
             colors: {
-                'orange-action': "#F98A43",
-                'purple-action': "#7A29DC",
-                'green-action': "18A194",
-                'dark-bg': "#121F28",
-                'light-bg': "#1C2933",
+                primary: "#ffffff",
+                default: "green",
+                "orange-action": "#F98A43",
+                "purple-action": "#7A29DC",
+                "green-action": "18A194",
+                "dark-bg": "#121F28",
+                "light-bg": "#1C2933",
             },
         },
     },
     darkMode: "class",
-    plugins: [nextui()],
+    plugins: [nextui(), require("daisyui")],
 };
 export default config

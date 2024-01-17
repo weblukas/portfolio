@@ -13,8 +13,7 @@ export default function ThemeSwitch() {
             color="success"
             startContent={<SunIcon />}
             endContent={<MoonIcon />}
-        >
-            
-        </Switch>
+            className="mt-[20px]  "
+        ></Switch>
     );
 }
