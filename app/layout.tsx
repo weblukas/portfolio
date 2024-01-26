@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className="font-['Lato']">
+            <body className="font-['Inter']">
                 <Providers>{children}</Providers>
             </body>
         </html>
