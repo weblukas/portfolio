@@ -3,7 +3,7 @@ import React from 'react'
 export default function ModalMenu() {
   return (
     <div>
-      <ul className='menu min-w-full bg-base-200 w-56 rounded-box'>
+      <ul className='menu min-w-full bg-base-200 w-56  text-black'>
         <li>
           <a>Item 1</a>
         </li>
