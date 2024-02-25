@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+
+import React from "react";
 
 interface Props {
     handleCheckboxChange: () => void;
@@ -9,11 +10,11 @@ export default function HamburgerMenu({
     handleCheckboxChange,
     isChecked,
 }: Props) {
-    // const [isChecked, setIsChecked] = useState(false);
+
 
     return (
         <div>
-            <label className="btn btn-circle swap swap-rotate">
+            <label className="swap swap-rotate">
                 {/* this hidden checkbox controls the state */}
                 <input
                     type="checkbox"
@@ -23,7 +24,7 @@ export default function HamburgerMenu({
 
                 {/* hamburger icon */}
                 <svg
-                    className="swap-off fill-current"
+                    className="fill-current swap-off"
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
                     height="32"
@@ -34,7 +35,7 @@ export default function HamburgerMenu({
 
                 {/* close icon */}
                 <svg
-                    className="swap-on fill-current"
+                    className="fill-current swap-on"
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
                     height="32"

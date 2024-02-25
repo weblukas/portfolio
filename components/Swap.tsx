@@ -1,16 +1,25 @@
-import React from 'react'
+import {FC} from "react";
 
-export const Swap = () => {
+interface SwapProps {
+    theme: boolean;
+    handleThemeChange: () => void;
+}
+
+export default function Swap({theme, handleThemeChange}: SwapProps) {
 
   return (
-      <div >
+      <div>
           <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}
-              <input type="checkbox" />
+              <input
+                  type="checkbox"
+                  checked={theme}
+                  onChange={handleThemeChange}
+              />
 
               {/* sun icon */}
               <svg
-                  className="swap-on fill-current w-8 h-8"
+                  className="w-8 h-8 fill-current swap-on"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
               >
@@ -19,7 +28,7 @@ export const Swap = () => {
 
               {/* moon icon */}
               <svg
-                  className="swap-off fill-current w-8 h-8"
+                  className="w-8 h-8 fill-current swap-off"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
               >

@@ -1,19 +1,55 @@
-import React from 'react'
+import { FC, useEffect, useRef } from "react";
+import { links } from "@/utils/links";
 
-export default function ModalMenu() {
-  return (
-    <div>
-      <ul className='menu min-w-full bg-base-200 w-56  text-black'>
-        <li>
-          <a>Item 1</a>
-        </li>
-        <li>
-          <a>Item 2</a>
-        </li>
-        <li>
-          <a>Item 3</a>
-        </li>
-      </ul>
-    </div>
-  );
+interface ModalProps {
+    // isOpen: boolean;
+    onClose: () => void;
 }
+
+const ModalMenu: FC<ModalProps> = ({onClose}) => {
+    const modalRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                modalRef.current &&
+                !modalRef.current.contains(event.target as Node)
+            ) {
+                onClose();
+            }
+            
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+    return (
+        <div
+            className=" bg-dark-bg dark:bg-white w-[100vw] mt-[70px] h-[160px]"
+            ref={modalRef}
+        >
+            <div className="">
+                <ul className="menu min-w-full w-56">
+                    {links.map((link) => (
+                        <li
+                            key={link.href}
+                            
+                        >
+                            <a
+                                href=""
+                                className="text-slate-100 dark:text-dark-bg"
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    );
+};
+
+export default ModalMenu;
