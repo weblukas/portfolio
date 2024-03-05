@@ -28,18 +28,15 @@ const ModalMenu: FC<ModalProps> = ({onClose}) => {
 
     return (
         <div
-            className=" bg-dark-bg dark:bg-white w-[100vw] mt-[70px] h-[160px]"
+            className=" bg-dark-bg dark:bg-white w-[100vw] mt-[70px] h-[130px]"
             ref={modalRef}
         >
             <div className="">
                 <ul className="menu min-w-full w-56">
                     {links.map((link) => (
-                        <li
-                            key={link.href}
-                            
-                        >
+                        <li key={link.href}>
                             <a
-                                href=""
+                                href={link.href}
                                 className="text-slate-100 dark:text-dark-bg"
                             >
                                 {link.label}

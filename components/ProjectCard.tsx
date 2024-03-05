@@ -1,5 +1,5 @@
 import { FC } from "react";
-
+import Image from "next/image";
 interface CardProps {
     id: number;
     name: string;
@@ -23,7 +23,14 @@ const ProjectCard: FC<CardProps> = ({
             className="shadow-2xl card w-96 bg-light-bg lg:text-[18px] "
         >
             <figure>
-                <img src={image} alt="Shoes" />
+                {/* <img src={image} alt="project screenshot" /> */}
+                <Image
+                    className="w-full h-auto"
+                    src={image}
+                    width={300}
+                    height={300}
+                    alt="project screenshot"
+                />
             </figure>
             <div className="card-body">
                 <h2 className="card-name">{name}</h2>
@@ -36,13 +43,15 @@ const ProjectCard: FC<CardProps> = ({
                     >
                         Live
                     </a>
-                    <a
-                        href={github}
-                        target="_blank"
-                        className="text-white link text-[20px] "
-                    >
-                        Code
-                    </a>
+                    {github ? (
+                        <a
+                            href={github}
+                            target="_blank"
+                            className="text-white link text-[20px] "
+                        >
+                            Code
+                        </a>
+                    ) : null}
                 </div>
             </div>
         </div>

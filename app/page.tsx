@@ -10,53 +10,34 @@ import Swap from "@/components/Swap";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import ModalMenu from "@/components/ModalMenu";
 import ProjectCard from "@/components/ProjectCard";
-import MobileMenu from "@/components/MobileMenu";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { onSubmit } from "@/sendEmail";
 
-
-
-
-interface IFormInput {
-    firstName: string;
-    label: string;
-    type: string;
-}
 function App() {
     const { control, handleSubmit } = useForm({
         defaultValues: {
             firstName: "",
-            title: "",
+            email: "",
             message: "",
             label: "",
             type: "email",
         },
     });
 
-    const onSubmit: SubmitHandler<IFormInput> = (data) => {
-        console.log(data);
-    };
+
 
     // handle toggle menu
     const [isChecked, setIsChecked] = useState(false);
-    // const [isOpen, setIsOpen] = useState(true);
+  
 
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
-        // setIsOpen(!isOpen);
-        // console.log(isOpen);
+     
     };
 
-    //handle modal menu close
-
-    //  const [isOpen, setIsOpen] = useState(false);
-
-    // const handleClose = () => {
-    //     setIsChecked(false);
-    //     console.log("close");
-    // };
-
+ 
     //theme toggle
     const [theme, setTheme] = useState(false);
     const handleThemeChange = () => {
@@ -65,8 +46,8 @@ function App() {
 
     return (
         <div className={`${theme && "dark"} relative `}>
-            <main className=" container mx-auto max-w-[1440px] py-[20px] sm:py-[30px] bg-gray-50  text-black dark:bg-dark-bg dark:text-white">
-                <header className="grid grid-cols-2 grid-rows-2 items-center gap-1 lg:px-10">
+            <main className=" container mx-auto max-w-[1240px] py-[20px] sm:py-[30px] bg-gray-50  text-black dark:bg-dark-bg dark:text-white">
+                <header className="grid grid-rows-2 items-center gap-1 lg:px-10">
                     <h2 className=" text-[30px] ml-[35px] col-span-1 self-center bg-orange-action bg-clip-text text-transparent">
                         Web &{" "}
                         <span className="text-black dark:text-slate-100">
@@ -74,31 +55,32 @@ function App() {
                         </span>
                     </h2>
                     <nav className="hidden lg:text-xl sm:block pt-[5px] mr-[35px] col-span-1 justify-self-end  ">
-                       <div className="flex">
+                        <div className="flex">
+                            <ul className="flex gap-9 mr-[80px]">
+                                {links.map((link) => (
+                                    <li key={link.label}>
+                                        <Link href={link.href}>
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
 
-                        <ul className="flex gap-9 mr-[80px]">
-                            {links.map((link) => (
-                                <li key={link.label}>
-                                    <Link href={link.href}>{link.label}</Link>
-                                </li>
-                            ))}
-                        </ul>
-
-                        <a
-                            href="https://github.com/weblukas"
-                            target="blank"
-                            className="text-2xl mr-4"
-                        >
-                            <FaGithub />
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/%C5%82ukasz-szmyd-webflow/"
-                            target="blank"
-                            className="text-2xl"
-                        >
-                            <FaLinkedin />
-                        </a>
-                       </div>
+                            <a
+                                href="https://github.com/weblukas"
+                                target="blank"
+                                className="text-2xl mr-4"
+                            >
+                                <FaGithub />
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/%C5%82ukasz-szmyd-webflow/"
+                                target="blank"
+                                className="text-2xl"
+                            >
+                                <FaLinkedin />
+                            </a>
+                        </div>
                     </nav>
                     <div className="basis-2/5 mr-[35px] flex flex-col gap-2  items-end pt-[5px] sm:hidden">
                         <HamburgerMenu
@@ -120,7 +102,7 @@ function App() {
                         </div>
                     )}
 
-                    <MobileMenu />
+                    {/* <MobileMenu /> */}
                 </header>
 
                 {/* hero section */}
@@ -128,7 +110,7 @@ function App() {
                     <div className="px-[20px] flex flex-col items-center lg:items-start lg:pt-22 lg:px-0">
                         <h1 className=" text-4xl  dark:text-slate-200 lg:pt-10 mb-8 lg:text-[40px] lg:leading-[44px] ">
                             <div className="text-underline"> Hello </div>
-                            <br /> Im Łukasz Szmyd
+                            <br /> I&apos;m Łukasz Szmyd
                             <br />
                             Front-end Developer
                         </h1>
@@ -172,12 +154,11 @@ function App() {
                         About me
                     </h3>
                     <Image
-                        src="/creative-man-bg.png"
+                        src="/creative-man.png"
                         alt="creative image"
                         width={250}
                         height={310}
-                        className="ml-[75px] hidden lg:block lg:row-span-2 drop-shadow-[0_0_2px_white,0_0_3px_white]"
-                        // filter: drop-shadow(0 0 2px white) drop-shadow(0 0 3px white) drop-shadow(0 0 35px #5d676f);
+                        className="ml-[75px] h-auto hidden lg:block lg:row-span-2 drop-shadow-[0_0_2px_white,0_0_3px_white]"
                     />
                     <div className="sd:w-[510px] sd:h-[240px] mx-auto mb-unit-3 lg:pt-10">
                         <p className="text-[20px] lg:text-[26px] text-center px-4">
@@ -196,7 +177,7 @@ function App() {
                         {skils.map((skil) => (
                             <div
                                 key={skil.id}
-                                className={`${skil.styles} bg-white border-2 m-1 lg:m-2 rounded-xl px-3 py-1 lg:px-5 lg:py-3 dark:bg-white/5 dark:text-white/80`}
+                                className="bg-white border-2 m-1 lg:m-2 rounded-xl px-3 py-1 lg:px-5 lg:py-3 dark:bg-white/5 dark:text-white/80"
                             >
                                 {skil.name}
                             </div>
@@ -206,16 +187,9 @@ function App() {
                 </section>
 
                 {/* Projects section  */}
-                <section id="projects" className="px-[75px] pt-8">
+                <section id="projects" className="sm:px-[75px] px-4 pt-8">
                     <h3 className="mt-16 text-3xl text-center">Projects</h3>
                     <div className="flex flex-wrap justify-center py-[30px] gap-16 text-slate-100 ">
-                        {/* <img
-                        src="/creative-work.png"
-                        alt="men at work"
-                        width={419}
-                        height={419}
-                        className="hidden lg:block"
-                    /> */}
                         {/* project cart */}
                         {projectsData.map((project) => {
                             const {
@@ -227,7 +201,6 @@ function App() {
                                 github,
                             } = project;
                             return (
-                                // <div className="self-center">
                                 <ProjectCard
                                     key={id}
                                     id={id}
@@ -237,13 +210,9 @@ function App() {
                                     url={url}
                                     github={github}
                                 />
-                                // </div>
                             );
                         })}
                     </div>
-                    {/* <a href='#' className=' text-orange-action'>
-            More Projects
-          </a> */}
                 </section>
 
                 {/* Contact section */}
@@ -251,14 +220,13 @@ function App() {
                     <h3 className="mt-16 text-3xl text-center">Contact</h3>
                     <form
                         onSubmit={handleSubmit(onSubmit)}
-                        className="mx-auto pt-[100px] max-w-[740px] h-[550px] mt-9 bg-light-bg rounded-lg flex flex-col items-center"
-                        // className="mx-auto pt-[100px] max-w-[740px] h-[550px] mt-9 bg-gradient-to-b from-[#E6533C] to-purple-action/60 rounded-lg flex flex-col items-center"
+                        className="mx-auto pt-[100px] max-w-[740px] h-[550px] mt-9 bg-light-bg sm:rounded-lg flex flex-col items-center"
                     >
                         <Controller
                             name="firstName"
                             control={control}
                             render={({ field }) => (
-                                <div className="w-[60%] py-3 ">
+                                <div className="sm:w-[60%] w-[80%] py-3 ">
                                     <input
                                         {...field}
                                         type="text"
@@ -269,14 +237,14 @@ function App() {
                             )}
                         />
                         <Controller
-                            name="title"
+                            name="email"
                             control={control}
                             render={({ field }) => (
-                                <div className="w-[60%] py-3 ">
+                                <div className="sm:w-[60%] w-[80%] py-3 ">
                                     <input
                                         {...field}
                                         type="text"
-                                        placeholder="Title"
+                                        placeholder="Your email"
                                         className="w-full input input-bordered dark:bg-dark-bg"
                                     />
                                 </div>
@@ -286,7 +254,7 @@ function App() {
                             name="message"
                             control={control}
                             render={({ field }) => (
-                                <div className="w-[60%] py-3 ">
+                                <div className="sm:w-[60%] w-[80%] py-3 ">
                                     <textarea
                                         {...field}
                                         placeholder="Message"

@@ -13,17 +13,17 @@ export const projectsData = [
         name: "Imperator drazka",
         description:
             "This is website for Imperator Drazka made with Next.js and Tailwind.",
-        image: "/imperator-screen.png",
+        image: "/imperator.jpg",
         url: "https://www.imperatordrazka.pl/",
-        github: "",
+        
     },
     {
         id: 3,
         name: "Zamiastowi",
         description:
             "This is website for Zamiastowi made with Next.js and Tailwind.",
-        image: "/zamiastowi.png",
+        image: "/zamiastowi.jpg",
         url: "https://www.zamiastowi.pl/",
-        github: "",
+        
     },
 ];
