@@ -20,6 +20,7 @@ export default function HamburgerMenu({
                     type="checkbox"
                     checked={isChecked}
                     onChange={handleCheckboxChange}
+                    aria-label="menu-toggle"
                 />
 
                 {/* hamburger icon */}

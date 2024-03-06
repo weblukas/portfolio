@@ -40,6 +40,7 @@ const ProjectCard: FC<CardProps> = ({
                         href={url}
                         target="_blank"
                         className="link text-orange-action text-[20px] pr-6"
+                        aria-label="live link"
                     >
                         Live
                     </a>
@@ -47,7 +48,8 @@ const ProjectCard: FC<CardProps> = ({
                         <a
                             href={github}
                             target="_blank"
-                            className="text-white link text-[20px] "
+                            className="text-white link text-[20px]"
+                            aria-label="github link"
                         >
                             Code
                         </a>

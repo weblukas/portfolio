@@ -15,14 +15,15 @@ export async function sendEmail(data: IFormInput) {
         const { firstName, email, message } = result.data;
         try {
             const data = await resend.emails.send({
-                from: "http://webandwolf.net/",
+                from: "webandwolf.net",
                 to: "szmydlukasz30@gmail.com",
                 subject: "Contact form submission",
-                react: React.createElement(ContactFormEmail, {
-                    firstName: firstName,
-                    message: message,
-                    email: email,
-                }),
+                text: `You received the following message from the contact form: ${message}`,
+                // react: React.createElement(ContactFormEmail, {
+                //     firstName: firstName,
+                //     message: message,
+                //     email: email,
+                // }),
             });
             return { success: true, data };
         } catch (error) {

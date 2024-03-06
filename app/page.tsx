@@ -39,12 +39,12 @@ function App() {
         <div className={`${theme && "dark"} relative `}>
             <main className=" container mx-auto max-w-[1240px] py-[20px] sm:py-[30px] bg-gray-50  text-black dark:bg-dark-bg dark:text-white">
                 <header className="grid grid-rows-2 items-center gap-1 lg:px-10">
-                    <h2 className=" text-[30px] ml-[35px] col-span-1 self-center bg-orange-action bg-clip-text text-transparent">
+                    <h1 className=" text-[30px] ml-[35px] col-span-1 self-center bg-orange-action bg-clip-text text-transparent">
                         Web &{" "}
                         <span className="text-black dark:text-slate-100">
                             Wolf
                         </span>
-                    </h2>
+                    </h1>
                     <nav className="hidden lg:text-xl sm:block pt-[5px] mr-[35px] col-span-1 justify-self-end  ">
                         <div className="flex">
                             <ul className="flex gap-9 mr-[80px]">
@@ -61,6 +61,7 @@ function App() {
                                 href="https://github.com/weblukas"
                                 target="blank"
                                 className="text-2xl mr-4"
+                                aria-label="github link"
                             >
                                 <FaGithub />
                             </a>
@@ -68,6 +69,7 @@ function App() {
                                 href="https://www.linkedin.com/in/%C5%82ukasz-szmyd-webflow/"
                                 target="blank"
                                 className="text-2xl"
+                                aria-label="linkedin link"
                             >
                                 <FaLinkedin />
                             </a>
@@ -92,23 +94,22 @@ function App() {
                             <ModalMenu onClose={handleCheckboxChange} />
                         </div>
                     )}
-
-                    {/* <MobileMenu /> */}
                 </header>
 
                 {/* hero section */}
                 <section className="flex flex-col lg:gap-20 justify-between mt-10 sm:px-10 md:flex-row md:px[48] lg:px-20">
                     <div className="px-[20px] flex flex-col items-center lg:items-start lg:pt-22 lg:px-0">
-                        <h1 className=" text-4xl  dark:text-slate-200 lg:pt-10 mb-8 lg:text-[40px] lg:leading-[44px] ">
+                        <h2 className=" text-4xl  dark:text-slate-200 lg:pt-10 mb-8 lg:text-[40px] lg:leading-[44px] ">
                              Hello
                             <br /> I&apos;m Łukasz Szmyd
                             <br />
                             Front-end Developer
-                        </h1>
+                        </h2>
                         <div className="flex">
                             <a
                                 href="#projects"
-                                className=" flex items-center md:max-lg:w-[140px] justify-center md:w-[182px] h-[50px] bg-orange-action rounded-lg md:mt-2 mr-4 w-[150px] md:h-[40px] text-slate-100 "
+                                className=" flex items-center md:max-lg:w-[140px] justify-center md:w-[182px] h-[50px] bg-orange-action rounded-lg md:mt-2 mr-4 w-[150px] md:h-[40px] text-slate-100"
+                                aria-label="projects link"
                             >
                                 My Projcts
                             </a>
@@ -117,6 +118,7 @@ function App() {
                                 href="/resume.pdf"
                                 download="Lukasz_Szmyd_resume"
                                 className=" flex items-center md:max-lg:w-[140px] justify-center md:w-[182px] h-[50px] bg-purple-action rounded-lg  md:mt-2  w-[150px] md:h-[40px] text-slate-100"
+                                aria-label="resume link"
                             >
                                 My Resume
                             </a>
@@ -139,7 +141,7 @@ function App() {
                 {/* About me section */}
                 <section
                     id="about"
-                    className=" bg-[url(/slice7.png)] bg-cover w-full h-auto  sm:px-[35px] lg:grid lg:grid-rows-[100px_350px_auto] lg:grid-cols-2 font-['Inter'] pt-8 "
+                    className=" bg-cover w-full h-auto  sm:px-[35px] lg:grid lg:grid-rows-[100px_350px_auto] lg:grid-cols-2 font-['Inter'] pt-8 "
                 >
                     <h3 className="py-4 text-3xl text-center font-medium lg:h-[100px] lg:col-span-2 lg: lg:text-[40px]">
                         About me

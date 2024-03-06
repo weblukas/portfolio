@@ -53,6 +53,7 @@ const ContactForm = () => {
                           type="text"
                           placeholder="Name"
                           className="w-full input input-bordered dark:bg-dark-bg"
+                          aria-label="name"
                       />
                       {errors.firstName?.message && (
                           <p className="ml-1 mt-1 text-sm text-orange-action">
@@ -72,6 +73,7 @@ const ContactForm = () => {
                           type="text"
                           placeholder="Your email"
                           className="w-full input input-bordered dark:bg-dark-bg"
+                          aria-label="email"
                       />
                       {errors.email?.message && (
                           <p className="ml-1 mt-1 text-sm text-orange-action">
@@ -90,6 +92,7 @@ const ContactForm = () => {
                           {...field}
                           placeholder="Message"
                           className="w-full textarea dark:bg-dark-bg textarea-bordered textarea-lg"
+                          aria-label="message"
                       ></textarea>
                       {errors.message?.message && (
                           <p className="ml-1 text-sm text-orange-action">
@@ -99,16 +102,10 @@ const ContactForm = () => {
                   </div>
               )}
           />
-
-          {/* <input
-              type="submit"
-              aria-label="submit"
-              className="bg-orange-action rounded-lg mt-8 text-center leading-[50px] inline-block w-[152px] h-[50px]"
-          /> */}
-
           <button
               disabled={isSubmitting}
               className="bg-orange-action rounded-lg mt-8 text-center leading-[50px] inline-block w-[152px] h-[50px]"
+              aria-label="submit"
           >
               {isSubmitting ? "Submitting..." : "Submit"}
           </button>
