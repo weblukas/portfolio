@@ -1,17 +1,22 @@
 import React from 'react'
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { sendEmail } from '@/api/send';
+import { ContactFormSchema } from "@/lib/zodSchema";
 
 const ContactForm = () => {
 
-     const { control, handleSubmit, formState: {errors, isSubmitting} } = useForm({
+     const {
+         control,
+         handleSubmit,
+         formState: { errors, isSubmitting },
+     } = useForm({
          defaultValues: {
              firstName: "",
              email: "",
              message: "",
-             label: "",
-             type: "email",
          },
+         resolver: zodResolver(ContactFormSchema),
      });
 
         const onSubmit: SubmitHandler<IFormInput> = async (data) => {
@@ -42,6 +47,11 @@ const ContactForm = () => {
                           placeholder="Name"
                           className="w-full input input-bordered dark:bg-dark-bg"
                       />
+                      {errors.firstName?.message && (
+                          <p className="ml-1 mt-1 text-sm text-orange-action">
+                              {errors.firstName.message}
+                          </p>
+                      )}
                   </div>
               )}
           />
@@ -56,6 +66,11 @@ const ContactForm = () => {
                           placeholder="Your email"
                           className="w-full input input-bordered dark:bg-dark-bg"
                       />
+                      {errors.email?.message && (
+                          <p className="ml-1 mt-1 text-sm text-orange-action">
+                              {errors.email.message}
+                          </p>
+                      )}
                   </div>
               )}
           />
@@ -69,15 +84,27 @@ const ContactForm = () => {
                           placeholder="Message"
                           className="w-full textarea dark:bg-dark-bg textarea-bordered textarea-lg"
                       ></textarea>
+                      {errors.message?.message && (
+                          <p className="ml-1 text-sm text-orange-action">
+                              {errors.message.message}
+                          </p>
+                      )}
                   </div>
               )}
           />
 
-          <input
+          {/* <input
               type="submit"
               aria-label="submit"
               className="bg-orange-action rounded-lg mt-8 text-center leading-[50px] inline-block w-[152px] h-[50px]"
-          />
+          /> */}
+
+          <button
+              disabled={isSubmitting}
+              className="bg-orange-action rounded-lg mt-8 text-center leading-[50px] inline-block w-[152px] h-[50px]"
+          >
+              {isSubmitting ? "Submitting..." : "Submit"}
+          </button>
       </form>
   );
 }
