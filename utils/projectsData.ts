@@ -12,7 +12,7 @@ export const projectsData = [
         id: 2,
         name: "Imperator drazka",
         description:
-            "This is website for Imperator Drazka made with Next.js and Tailwind.",
+            "Landing page made for personal trainer. It's works on Next.js and DatoCms as a headless CMS.",
         image: "/imperator.jpg",
         url: "https://www.imperatordrazka.pl/",
         
@@ -21,7 +21,7 @@ export const projectsData = [
         id: 3,
         name: "Zamiastowi",
         description:
-            "This is website for Zamiastowi made with Next.js and Tailwind.",
+            "Website for a company shows variety of turistic offers. As a Codestiny team we fix some bugs and add new features.",
         image: "/zamiastowi.jpg",
         url: "https://www.zamiastowi.pl/",
         
