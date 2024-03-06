@@ -1,14 +1,18 @@
+'use client';
+
 import React from 'react'
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sendEmail } from '@/api/send';
 import { ContactFormSchema } from "@/lib/zodSchema";
+import { toast } from "sonner";
 
 const ContactForm = () => {
 
      const {
          control,
          handleSubmit,
+         reset,
          formState: { errors, isSubmitting },
      } = useForm({
          defaultValues: {
@@ -24,11 +28,14 @@ const ContactForm = () => {
 
              if (result?.success) {
                  console.log({ data: result.data });
+                 toast.success("Email sent!");
+                 reset();
                  return;
              }
 
-             // toast error
+             
              console.log(result?.error);
+             toast.error("Something went wrong!");
         };
 
   return (
