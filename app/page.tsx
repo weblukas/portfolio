@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import Image from "next/image";
 import { links } from "@/utils/links";
 import { skils } from "@/utils/skils";
@@ -13,19 +12,11 @@ import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import { onSubmit } from "@/sendEmail";
+import ContactForm from "@/components/ContactForm";
+
 
 function App() {
-    const { control, handleSubmit } = useForm({
-        defaultValues: {
-            firstName: "",
-            email: "",
-            message: "",
-            label: "",
-            type: "email",
-        },
-    });
-
+   
 
 
     // handle toggle menu
@@ -109,7 +100,7 @@ function App() {
                 <section className="flex flex-col lg:gap-20 justify-between mt-10 sm:px-10 md:flex-row md:px[48] lg:px-20">
                     <div className="px-[20px] flex flex-col items-center lg:items-start lg:pt-22 lg:px-0">
                         <h1 className=" text-4xl  dark:text-slate-200 lg:pt-10 mb-8 lg:text-[40px] lg:leading-[44px] ">
-                            <div className="text-underline"> Hello </div>
+                             Hello
                             <br /> I&apos;m Łukasz Szmyd
                             <br />
                             Front-end Developer
@@ -218,58 +209,7 @@ function App() {
                 {/* Contact section */}
                 <section id="contact">
                     <h3 className="mt-16 text-3xl text-center">Contact</h3>
-                    <form
-                        onSubmit={handleSubmit(onSubmit)}
-                        className="mx-auto pt-[100px] max-w-[740px] h-[550px] mt-9 bg-light-bg sm:rounded-lg flex flex-col items-center"
-                    >
-                        <Controller
-                            name="firstName"
-                            control={control}
-                            render={({ field }) => (
-                                <div className="sm:w-[60%] w-[80%] py-3 ">
-                                    <input
-                                        {...field}
-                                        type="text"
-                                        placeholder="Name"
-                                        className="w-full input input-bordered dark:bg-dark-bg"
-                                    />
-                                </div>
-                            )}
-                        />
-                        <Controller
-                            name="email"
-                            control={control}
-                            render={({ field }) => (
-                                <div className="sm:w-[60%] w-[80%] py-3 ">
-                                    <input
-                                        {...field}
-                                        type="text"
-                                        placeholder="Your email"
-                                        className="w-full input input-bordered dark:bg-dark-bg"
-                                    />
-                                </div>
-                            )}
-                        />
-                        <Controller
-                            name="message"
-                            control={control}
-                            render={({ field }) => (
-                                <div className="sm:w-[60%] w-[80%] py-3 ">
-                                    <textarea
-                                        {...field}
-                                        placeholder="Message"
-                                        className="w-full textarea dark:bg-dark-bg textarea-bordered textarea-lg"
-                                    ></textarea>
-                                </div>
-                            )}
-                        />
-
-                        <input
-                            type="submit"
-                            aria-label="submit"
-                            className="bg-orange-action rounded-lg mt-8 text-center leading-[50px] inline-block w-[152px] h-[50px]"
-                        />
-                    </form>
+                   <ContactForm />
                 </section>
             </main>
         </div>
