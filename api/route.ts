@@ -13,7 +13,7 @@ export async function sendEml() {
             Authorization: `Bearer ${RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-            from: "Acme <onboarding@resend.dev>",
+            from: "poczta@webandwolf.net",
             to: ["szmydlukasz30@gmail.com"],
             subject: "hello world",
             html: "<strong>it works!</strong>",

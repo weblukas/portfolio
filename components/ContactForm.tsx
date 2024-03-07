@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { sendEmail } from '@/api/send';
 import { ContactFormSchema } from "@/lib/zodSchema";
 import { toast } from "sonner";
+import { sendEml } from '@/api/route';
 
 const ContactForm = () => {
 
@@ -24,6 +25,8 @@ const ContactForm = () => {
      });
 
         const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+
+            sendEml();
             const result = await sendEmail(data);
 
              if (result?.success) {

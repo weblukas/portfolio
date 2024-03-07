@@ -14,21 +14,16 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
 
-
 function App() {
-   
-
 
     // handle toggle menu
     const [isChecked, setIsChecked] = useState(false);
-  
 
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
      
     };
 
- 
     //theme toggle
     const [theme, setTheme] = useState(false);
     const handleThemeChange = () => {
@@ -174,7 +169,6 @@ function App() {
                             >
                                 {skil.name}
                             </div>
-                            // </div>
                         ))}
                     </div>
                 </section>
@@ -183,7 +177,7 @@ function App() {
                 <section id="projects" className="sm:px-[75px] px-4 pt-8">
                     <h3 className="mt-16 text-3xl text-center">Projects</h3>
                     <div className="flex flex-wrap justify-center py-[30px] gap-16 text-slate-100 ">
-                        {/* project cart */}
+                        {/* project card */}
                         {projectsData.map((project) => {
                             const {
                                 id,

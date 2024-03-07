@@ -1,7 +1,7 @@
 export const projectsData = [
     {
         id: 1,
-        name: "Store",
+        name: "Store project",
         image: "/store-project.png",
         description:
             "This is simple store made with React and Style Comonents.",
@@ -10,9 +10,9 @@ export const projectsData = [
     },
     {
         id: 2,
-        name: "Imperator drazka",
+        name: "Imperator drążka",
         description:
-            "Landing page made for personal trainer. It's works on Next.js and DatoCms as a headless CMS.",
+            "Landing page made for personal trainer. It works on Next.js and DatoCms as a headless CMS.",
         image: "/imperator.jpg",
         url: "https://www.imperatordrazka.pl/",
         
@@ -21,7 +21,7 @@ export const projectsData = [
         id: 3,
         name: "Zamiastowi",
         description:
-            "Website for a company shows variety of turistic offers. As a Codestiny team we fix some bugs and add new features.",
+            "Website presents variety of tourist attractions and destinations. As a Codestiny team we fix some bugs and add new features.",
         image: "/zamiastowi.jpg",
         url: "https://www.zamiastowi.pl/",
         
