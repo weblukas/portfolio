@@ -26,7 +26,6 @@ const ContactForm = () => {
 
         const onSubmit: SubmitHandler<IFormInput> = async (data) => {
 
-            sendEml();
             const result = await sendEmail(data);
 
              if (result?.success) {
