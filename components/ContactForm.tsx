@@ -3,10 +3,9 @@
 import React from 'react'
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { sendEmail } from '@/api/send';
+import { sendEmail } from '@/api/sendEmail';
 import { ContactFormSchema } from "@/lib/zodSchema";
 import { toast } from "sonner";
-import { sendEml } from '@/api/route';
 
 const ContactForm = () => {
 
@@ -14,7 +13,7 @@ const ContactForm = () => {
          control,
          handleSubmit,
          reset,
-         formState: { errors, isSubmitting },
+         formState: { errors, isSubmitting, isSubmitSuccessful },
      } = useForm({
          defaultValues: {
              firstName: "",
@@ -34,8 +33,6 @@ const ContactForm = () => {
                  reset();
                  return;
              }
-
-             
              console.log(result?.error);
              toast.error("Something went wrong!");
         };
