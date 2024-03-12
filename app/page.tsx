@@ -13,6 +13,7 @@ import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
+import { motion } from "framer-motion";
 
 function App() {
 
@@ -45,7 +46,10 @@ function App() {
                             <ul className="flex gap-9 mr-[80px]">
                                 {links.map((link) => (
                                     <li key={link.label}>
-                                        <Link href={link.href}>
+                                        <Link
+                                            href={link.href}
+                                            className=" hover:text-orange-action "
+                                        >
                                             {link.label}
                                         </Link>
                                     </li>
@@ -95,30 +99,31 @@ function App() {
                 <section className="flex flex-col lg:gap-20 justify-between mt-10 sm:px-10 md:flex-row md:px[48] lg:px-20">
                     <div className="px-[20px] flex flex-col items-center lg:items-start lg:pt-22 lg:px-0">
                         <h2 className=" text-4xl  dark:text-slate-200 lg:pt-10 mb-8 lg:text-[40px] lg:leading-[44px] ">
-                             Hello
+                            Hello
                             <br /> I&apos;m Łukasz Szmyd
                             <br />
                             Front-end Developer
                         </h2>
                         <div className="flex">
-                            <a
+                            <motion.a
                                 href="#projects"
-                                className=" flex items-center md:max-lg:w-[140px] justify-center md:w-[182px] h-[50px] bg-orange-action rounded-lg md:mt-2 mr-4 w-[150px] md:h-[40px] text-slate-100"
+                                className=" flex items-center justify-center md:w-[182px]  bg-orange-action rounded-lg md:mt-2 mr-4 w-[150px] md:h-[40px] text-slate-100 focus:scale-[1.15] hover:scale-[1.05] transition"
                                 aria-label="projects link"
                             >
                                 My Projcts
-                            </a>
+                            </motion.a>
 
                             <a
                                 href="/resume.pdf"
                                 download="Lukasz_Szmyd_resume"
-                                className=" flex items-center md:max-lg:w-[140px] justify-center md:w-[182px] h-[50px] bg-purple-action rounded-lg  md:mt-2  w-[150px] md:h-[40px] text-slate-100"
+                                className=" flex items-center px-7 py-3  justify-center md:w-[182px] bg-purple-action rounded-lg  md:mt-2  w-[150px] md:h-[40px] text-slate-100 focus:scale-[1.15] hover:scale-[1.05] transition subpixel-antialiased"
                                 aria-label="resume link"
                             >
                                 My Resume
                             </a>
                         </div>
                     </div>
+                    {/* md:max-lg:w-[140px] */}
                     <div className="py-8 md:w-[40%] ">
                         <Image
                             src={wolf}
@@ -154,8 +159,8 @@ function App() {
                             commercial experience. My main stack is React along
                             with TypeScript and Next js. I enjoy exploring the
                             React ecosystem and learning new technologies. In
-                            the future I would like to get better at backend and
-                            become a fullstack developer.
+                            the future I would like to get better at back-and
+                            and become a fullstack developer.
                         </p>
                     </div>
                     <h3 className="pb-4 px-4 pt-12 text-2xl lg:col-span-2 text-center lg:text-[36px]">
@@ -205,7 +210,7 @@ function App() {
                 {/* Contact section */}
                 <section id="contact">
                     <h3 className="mt-16 text-3xl text-center">Contact</h3>
-                   <ContactForm />
+                    <ContactForm />
                 </section>
             </main>
         </div>
