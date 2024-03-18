@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { links } from "@/utils/links";
 import { skils } from "@/utils/skils";
@@ -14,15 +14,14 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
 import { motion } from "framer-motion";
+import TextEffect from "@/components/TextEffect";
 
 function App() {
-
     // handle toggle menu
     const [isChecked, setIsChecked] = useState(false);
 
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
-     
     };
 
     //theme toggle
@@ -31,11 +30,12 @@ function App() {
         setTheme(!theme);
     };
 
+
     return (
         <div className={`${theme && "dark"} relative `}>
-            <main className=" container mx-auto max-w-[1240px] py-[20px] sm:py-[30px] bg-gray-50  text-black dark:bg-dark-bg dark:text-white">
+            <main className="  container mx-auto max-w-[1240px] py-[20px] sm:py-[30px] bg-gray-50  text-black dark:bg-dark-bg dark:text-slate-200">
                 <header className="grid grid-rows-2 items-center gap-1 lg:px-10">
-                    <h1 className=" text-[30px] ml-[35px] col-span-1 self-center bg-orange-action bg-clip-text text-transparent">
+                    <h1 className=" text-4xl ml-[35px] col-span-1 self-center bg-orange-action bg-clip-text text-transparent">
                         Web &{" "}
                         <span className="text-black dark:text-slate-100">
                             Wolf
@@ -97,9 +97,18 @@ function App() {
 
                 {/* hero section */}
                 <section className="flex flex-col lg:gap-20 justify-between mt-10 sm:px-10 md:flex-row md:px[48] lg:px-20">
-                    <div className="px-[20px] flex flex-col items-center lg:items-start lg:pt-22 lg:px-0">
-                        <h2 className=" text-4xl  dark:text-slate-200 lg:pt-10 mb-8 lg:text-[40px] lg:leading-[44px] ">
-                            Hello
+                    <div className="px-[20px] flex flex-col pt-[60px] lg:items-start lg:pt-22 lg:px-0">
+                        <div className="flex items-end   ">
+                            <TextEffect
+                                word="H"
+                                className=" inline-block text-[80px] leading-[40px] "
+                            />
+                            <TextEffect
+                                word="ello"
+                                className="inline-block text-4xl "
+                            />
+                        </div>
+                        <h2 className=" text-4xl  dark:text-slate-200 mb-8 lg:text-[40px] lg:leading-[44px] ">
                             <br /> I&apos;m Łukasz Szmyd
                             <br />
                             Front-end Developer
@@ -154,7 +163,7 @@ function App() {
                         className="ml-[75px] h-auto hidden lg:block lg:row-span-2 drop-shadow-[0_0_2px_white,0_0_3px_white]"
                     />
                     <div className="sd:w-[510px] sd:h-[240px] mx-auto mb-unit-3 lg:pt-10">
-                        <p className="text-[20px] lg:text-[26px] text-center px-4">
+                        <p className="text-[20px] lg:text-[28px] text-center px-4 font-['Cal-Sans']">
                             Front-end developer with over two years of
                             commercial experience. My main stack is React along
                             with TypeScript and Next js. I enjoy exploring the
@@ -180,7 +189,7 @@ function App() {
 
                 {/* Projects section  */}
                 <section id="projects" className="sm:px-[75px] px-4 pt-8">
-                    <h3 className="mt-16 text-3xl text-center">Projects</h3>
+                    <h3 className="mt-16 text-4xl text-center">Projects</h3>
                     <div className="flex flex-wrap justify-center py-[30px] gap-16 text-slate-100 ">
                         {/* project card */}
                         {projectsData.map((project) => {
