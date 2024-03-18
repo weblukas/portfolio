@@ -116,7 +116,7 @@ function App() {
                         <div className="flex">
                             <motion.a
                                 href="#projects"
-                                className=" flex items-center justify-center md:w-[182px]  bg-orange-action rounded-lg md:mt-2 mr-4 w-[150px] md:h-[40px] text-slate-100 focus:scale-[1.15] hover:scale-[1.05] transition"
+                                className=" flex items-center justify-center md:w-[182px] text-[18px] md:text-[20px] bg-orange-action rounded-lg md:mt-2 mr-4 w-[150px] md:h-[40px] text-slate-100 focus:scale-[1.15] hover:scale-[1.05] transition"
                                 aria-label="projects link"
                             >
                                 My Projcts
@@ -125,7 +125,7 @@ function App() {
                             <a
                                 href="/resume.pdf"
                                 download="Lukasz_Szmyd_resume"
-                                className=" flex items-center px-7 py-3  justify-center md:w-[182px] bg-purple-action rounded-lg  md:mt-2  w-[150px] md:h-[40px] text-slate-100 focus:scale-[1.15] hover:scale-[1.05] transition subpixel-antialiased"
+                                className=" flex items-center px-7 py-3  justify-center md:w-[182px] text-[18px] md:text-[20px] bg-purple-action rounded-lg  md:mt-2  w-[150px] md:h-[40px] text-slate-100 focus:scale-[1.15] hover:scale-[1.05] transition subpixel-antialiased"
                                 aria-label="resume link"
                             >
                                 My Resume
