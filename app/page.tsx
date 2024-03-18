@@ -97,7 +97,7 @@ function App() {
 
                 {/* hero section */}
                 <section className="flex flex-col lg:gap-20 justify-between mt-10 sm:px-10 md:flex-row md:px[48] lg:px-20">
-                    <div className="px-[20px] flex flex-col pt-[60px] lg:items-start lg:pt-22 lg:px-0">
+                    <div className="px-[20px] flex flex-col pt-[60px] md:items-start lg:pt-22 lg:px-0 items-center ">
                         <div className="flex items-end   ">
                             <TextEffect
                                 word="H"
@@ -108,7 +108,7 @@ function App() {
                                 className="inline-block text-4xl "
                             />
                         </div>
-                        <h2 className=" text-4xl  dark:text-slate-200 mb-8 lg:text-[40px] lg:leading-[44px] ">
+                        <h2 className=" text-4xl  dark:text-slate-200 mb-8 lg:text-[40px] lg:leading-[44px] text-center md:text-left">
                             <br /> I&apos;m Łukasz Szmyd
                             <br />
                             Front-end Developer
