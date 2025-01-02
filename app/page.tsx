@@ -45,7 +45,7 @@ function App() {
                             <ul className="flex gap-9 mr-[80px]">
                                 {links.map((link) => (
                                     <li key={link.label}>
-                                        <Link href={link.href}>
+                                        <Link href={link.href} className="text-bg-orange-active">
                                             {link.label}
                                         </Link>
                                     </li>
