@@ -3,7 +3,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 export const metadata: Metadata = {
     title: "Web & Wolf",
-    description: "Personal portfolio",
+    description: " Lukasz Szmyd front-end developer portfolio",
 };
 
 export default function RootLayout({
@@ -13,8 +13,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className="scroll-smooth">
-            <body className="font-['Inter']">{children}
-            <Toaster />
+            <body className="font-['Cal-Sans']">
+                {children}
+                <Toaster />
             </body>
         </html>
     );
