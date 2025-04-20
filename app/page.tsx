@@ -27,7 +27,7 @@ function App() {
   };
 
   //theme toggle
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(true);
   const handleThemeChange = () => {
     setTheme(!theme);
   };
@@ -46,7 +46,7 @@ function App() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className=' hover:text-orange-action '
+                      className=' hover:text-orange-action text-2xl'
                     >
                       {link.label}
                     </Link>
@@ -129,7 +129,7 @@ function App() {
             {/* Add Snowfall effect */}
             <Snowfall
               color='white' // Snowflake color
-              snowflakeCount={100} 
+              snowflakeCount={100}
               speed={[0.2, 0.6]}
               style={{
                 position: 'absolute',
