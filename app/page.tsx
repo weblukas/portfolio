@@ -15,6 +15,7 @@ import { FaLinkedin } from 'react-icons/fa';
 import ContactForm from '@/components/ContactForm';
 import { motion } from 'framer-motion';
 import TextEffect from '@/components/TextEffect';
+import Skills from '@/components/Skills';
 
 function App() {
   // handle toggle menu
@@ -164,16 +165,8 @@ function App() {
           <h3 className='pb-4 px-4 pt-12 text-2xl lg:col-span-2 text-center lg:text-[36px]'>
             My skils
           </h3>
-          <div className='lg:col-span-2 px-4 flex flex-wrap text-[18px]'>
-            {skils.map((skil) => (
-              <div
-                key={skil.id}
-                className='bg-white border-2 m-1 lg:m-2 rounded-xl px-3 py-1 lg:px-5 lg:py-3 dark:bg-white/5 dark:text-white/80'
-              >
-                {skil.name}
-              </div>
-            ))}
-          </div>
+          <Skills />
+       
         </section>
 
         {/* Projects section  */}
