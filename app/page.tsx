@@ -16,6 +16,7 @@ import ContactForm from '@/components/ContactForm';
 import { motion } from 'framer-motion';
 import TextEffect from '@/components/TextEffect';
 import Skills from '@/components/Skills';
+import Snowfall from 'react-snowfall';
 
 function App() {
   // handle toggle menu
@@ -124,12 +125,25 @@ function App() {
             </div>
           </div>
           {/* md:max-lg:w-[140px] */}
-          <div className='py-8 md:w-[40%] '>
+          <div className='py-8 md:w-[40%] relative'>
+            {/* Add Snowfall effect */}
+            <Snowfall
+              color='white' // Snowflake color
+              snowflakeCount={100} 
+              speed={[0.2, 0.6]}
+              style={{
+                position: 'absolute',
+                top: 25,
+                width: '100%',
+                height: '70%',
+                zIndex: 11,
+              }}
+            />
             <Image
               src={wolf}
               alt='wolf'
               placeholder='blur'
-              className='w-full mb-5'
+              className='w-full mb-5 relative z-10' // Ensure the image is above the snow
             />
             <q className='py-6 text-lg px-4 sm:px-0'>
               The gaze of the wolf reaches into our soul
@@ -166,7 +180,6 @@ function App() {
             My skils
           </h3>
           <Skills />
-       
         </section>
 
         {/* Projects section  */}
