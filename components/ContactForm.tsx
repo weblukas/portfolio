@@ -51,7 +51,7 @@ const ContactForm = () => {
               {...field}
               type='text'
               placeholder='Name'
-              className='w-full input input-bordered dark:bg-dark-bg'
+              className='w-full input input-bordered dark:bg-dark-bg text-white'
               aria-label='name'
             />
             {errors.firstName?.message && (
@@ -71,7 +71,7 @@ const ContactForm = () => {
               {...field}
               type='text'
               placeholder='Your email'
-              className='w-full input input-bordered dark:bg-dark-bg'
+              className='w-full input input-bordered dark:bg-dark-bg text-white'
               aria-label='email'
             />
             {errors.email?.message && (
@@ -90,7 +90,7 @@ const ContactForm = () => {
             <textarea
               {...field}
               placeholder='Message'
-              className='w-full textarea dark:bg-dark-bg textarea-bordered textarea-lg'
+              className='w-full textarea dark:bg-dark-bg textarea-bordered textarea-lg text-white'
               aria-label='message'
             ></textarea>
             {errors.message?.message && (
