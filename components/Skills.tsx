@@ -8,7 +8,7 @@ const Skills = () => {
 
   return (
     <div
-      ref={ref} // Attach the ref to the container
+      ref={ref} 
       className="lg:col-span-2 px-4 flex flex-wrap text-[18px]"
     >
       {skils.map((skil) => (

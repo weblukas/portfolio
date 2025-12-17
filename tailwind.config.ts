@@ -24,7 +24,7 @@ const config: Config = {
         'orange-action': '#F98A43',
         'purple-action': '#7A29DC',
         'green-action': '18A194',
-        'dark-bg': '#121F28',
+        'dark-bg': '#121F28',//222f38
         'light-bg': '#1C2933',
       },
     },
